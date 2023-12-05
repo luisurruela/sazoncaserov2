@@ -1,11 +1,17 @@
-<div class="p-lg-5 p-3 cover">
-    <div class="container">
+<div class="p-lg-5 p-3 cover d-flex">
+    <div class="container my-auto">
         <div class="mx-auto col-lg-8 text-white">
             <h1 class="text-center text-shadow">Una delicia para el paladar</h1>
             <p class="text-center text-shadow">Ordena vía WhatsApp y con gusto te llevamos tu comida.</p>
             <div class="text-center mt-5 mb-3">
-                <button type="button" class="btn btn-success btn-lg px-4">Ordena ahora</button>
+                <a href="https://wa.me/529931893825" target="_blank" type="button" class="btn btn-success btn-lg px-4">Ordena ahora</a>
             </div>
         </div>
     </div>
 </div>
+<app-logo></app-logo>
+<app-section [config]="config.menu"></app-section>
+<app-section [config]="config.sides"></app-section>
+<app-section [config]="config.desserts"></app-section>
+<app-section [config]="config.beverages"></app-section>
+<app-footer></app-footer>

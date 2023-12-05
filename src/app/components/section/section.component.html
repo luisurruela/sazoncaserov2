@@ -1,0 +1,18 @@
+<div>
+    <div class="container text-center">
+        <h1>{{ config.title }}</h1>
+        <p>{{ config.description }}</p>
+
+        <div class="row my-5">
+            <div class="col-lg-4 d-flex align-items-stretch" *ngFor="let element of config.elements">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <img [src]="element.image" class="img-fluid">
+                        <h5>{{ element.name }}</h5>
+                        <p>{{ element.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
