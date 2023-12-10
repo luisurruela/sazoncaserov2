@@ -1,0 +1,24 @@
+<div class="bg-dark-subtle">
+    <div class="container centrar-verticalmente">
+        <div class="col-md-4 col-10">
+            <div class="card rounded-4">
+                <div class="card-body shadow-lg py-4">
+                    <app-logo></app-logo>
+                    <form>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-lg" id="username" [(ngModel)]="username" name="username" placeholder="Nombre de usuario" required>
+                        </div>
+                
+                        <div class="form-group mt-2">
+                          <input type="password" class="form-control form-control-lg" id="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+                        </div>
+                
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary mt-4 btn-lg rounded-5 px-5 w-100" (click)="submit()" [disabled]="buttonState">Iniciar sesión</button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

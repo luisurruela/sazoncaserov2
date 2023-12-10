@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LogoComponent } from '../../components/logo/logo.component';
 import { SectionComponent } from '../../components/section/section.component';
-import { SectionConfig } from './types/section-element';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +11,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
     FooterComponent,
     SectionComponent,
     LogoComponent,
+    NavbarComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
