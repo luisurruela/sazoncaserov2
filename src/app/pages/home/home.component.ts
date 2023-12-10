@@ -86,7 +86,7 @@ export class HomeComponent {
         ]
       },
       beverages: {
-        title: 'Bevidas',
+        title: 'Bebidas',
         description: '',
         elements: [
           {
