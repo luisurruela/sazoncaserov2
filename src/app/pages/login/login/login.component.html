@@ -6,15 +6,15 @@
                     <app-logo></app-logo>
                     <form>
                         <div class="form-group">
-                          <input type="text" class="form-control form-control-lg" id="username" [(ngModel)]="username" name="username" placeholder="Nombre de usuario" required>
+                          <input type="text" class="form-control form-control-lg" id="username" (input)="onChange()" [(ngModel)]="username" name="username" placeholder="Nombre de usuario" required>
                         </div>
                 
                         <div class="form-group mt-2">
-                          <input type="password" class="form-control form-control-lg" id="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+                          <input type="password" class="form-control form-control-lg" id="password" (input)="onChange()" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
                         </div>
                 
                         <div class="text-center">
-                            <button type="submit" class="btn btn-primary mt-4 btn-lg rounded-5 px-5 w-100" (click)="submit()" [disabled]="buttonState">Iniciar sesión</button>
+                            <button type="submit" class="btn btn-primary mt-4 btn-lg rounded-5 px-5 w-100" (click)="submit()" [disabled]="!formIsValid">Iniciar sesión</button>
                         </div>
                       </form>
                 </div>
