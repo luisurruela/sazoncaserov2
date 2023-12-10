@@ -104,6 +104,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "sazoncasero:build:production",
+              "serveTarget": "sazoncasero:serve:production"
+            },
+            "development": {
+              "buildTarget": "sazoncasero:build:development",
+              "serveTarget": "sazoncasero:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sazoncasero": {
+      "hosting": {
+        "sazoncasero": [
+          "sazoncasero"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sazoncasero"
+  }
+}

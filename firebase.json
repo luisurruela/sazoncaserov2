@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "sazoncasero",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-east1"
+      }
+    }
+  ]
+}
