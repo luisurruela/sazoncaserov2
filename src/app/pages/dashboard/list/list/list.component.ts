@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../../pages/dashboard/components/navbar/navbar/navbar.component';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { bootstrapPlusCircle } from '@ng-icons/bootstrap-icons';
+import { NavbarComponent } from '../../components/navbar/navbar/navbar.component';
 
 @Component({
   selector: 'app-list',
