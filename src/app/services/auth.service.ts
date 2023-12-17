@@ -1,22 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Auth, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private isLoggedIn = false;
+  userData: any;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private auth: Auth
   ) {}
 
-  login(username: string, password: string): boolean {
-    if (username.trim() === 'luisurruela' && password.trim() === '123123') {
+  async login(email: string, password: string): Promise<void> {
+    try {
+      const res = await signInWithEmailAndPassword(this.auth, email, password);
+      this.userData = res.user;
       this.isLoggedIn = true;
       this.router.navigate(['/dashboard']);
+    } catch (e) {
+      return console.log(e);
     }
-    return this.isLoggedIn;
   }
 
   isAuthenticated(): boolean {
@@ -24,7 +30,10 @@ export class AuthService {
   }
 
   logout(): void {
-    this.isLoggedIn = false;
-    this.router.navigate(['/']);
+    signOut(this.auth).then(() => {
+      this.isLoggedIn = false;
+      this.router.navigate(['/']);
+    });
   }
+  
 }

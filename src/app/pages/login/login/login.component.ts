@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LogoComponent } from '../../../components/logo/logo.component';
-import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -12,21 +11,20 @@ import { AuthService } from '../../../services/auth.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  username: string = '';
+  email: string = '';
   password: string = '';
   formIsValid = false;
 
   constructor(
-    private router: Router,
     private auth: AuthService
   ) {
   }
 
   onChange() {
-    this.formIsValid = this.username.trim().length > 0 && this.password.trim().length > 0;
+    this.formIsValid = this.email.trim().length > 0 && this.password.trim().length > 0;
   }
 
   submit() {
-    this.auth.login(this.username, this.password);
+    this.auth.login(this.email, this.password);
   }
 }
