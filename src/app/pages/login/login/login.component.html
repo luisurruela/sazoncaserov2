@@ -5,13 +5,16 @@
                 <div class="card-body shadow-lg p-4">
                     <app-logo></app-logo>
                     <div *ngIf="errorMessage" class="text-danger p-1">* {{ errorMessage }}</div>
-                    <form (ngSubmit)="submit()" #loginForm="ngForm">
+                    <form (ngSubmit)="submit()" [formGroup]="loginForm">
                         <div class="form-group">
-                          <input type="email" class="form-control form-control-lg" id="email" (input)="onChange()" [(ngModel)]="email" name="email" placeholder="Correo electrónico">
+                          <input type="email" class="form-control form-control-lg" formControlName="email" id="email" name="email" placeholder="Correo electrónico">
+                          <div *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched" class="small text-danger px-2 py-1">
+                            Ingresa un correo electrónico válido.
+                          </div>
                         </div>
                 
                         <div class="form-group mt-2">
-                          <input type="password" class="form-control form-control-lg" id="password" (input)="onChange()" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+                          <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Contraseña" formControlName="password" required>
                         </div>
                 
                         <div class="text-center">
