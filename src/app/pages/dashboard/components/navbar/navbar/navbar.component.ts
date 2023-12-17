@@ -10,10 +10,13 @@ import { AuthService } from '../../../../../services/auth.service';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  displayName: string | null | undefined = '';
 
   constructor(
     private auth: AuthService
-  ) { }
+  ) {
+    this.displayName = this.auth.user()?.displayName;
+  }
 
   logout() {
     this.auth.logout();
