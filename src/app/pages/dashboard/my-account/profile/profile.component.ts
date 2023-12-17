@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { bootstrapArrowLeftShort } from '@ng-icons/bootstrap-icons';
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
 
 @Component({
-  selector: 'app-my-account',
+  selector: 'app-profile',
   standalone: true,
   imports: [RouterLink, RouterLinkActive, NgIconComponent],
-  templateUrl: './my-account.component.html',
-  styleUrl: './my-account.component.scss',
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.scss',
   viewProviders: [provideIcons({ bootstrapArrowLeftShort })]
 })
-export class MyAccountComponent {
+export class ProfileComponent {
 
 }
