@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LogoComponent } from '../../../components/logo/logo.component';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,10 @@ export class LoginComponent {
   password: string = '';
   formIsValid = false;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private auth: AuthService
+  ) {
   }
 
   onChange() {
@@ -23,8 +27,6 @@ export class LoginComponent {
   }
 
   submit() {
-    if (this.username.trim() === 'luisurruela' && this.password.trim() === '123123') {
-      this.router.navigate(['/dashboard']);
-    }
+    this.auth.login(this.username, this.password);
   }
 }
