@@ -5,5 +5,19 @@
 </nav>
 
 <div class="container my-5 px-3">
-    
+    <div class="col-lg-6 mx-auto">
+        <div class="card rounded-4">
+            <div class="card-body shadow-lg p-4">
+                <form (ngSubmit)="submit()" [formGroup]="profileForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" formControlName="displayName" id="displayName" name="displayName" placeholder="Escribe tu nombre" required>
+                    </div>
+            
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mt-4 btn-lg rounded-5 px-5 w-100" [disabled]="profileForm.invalid">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

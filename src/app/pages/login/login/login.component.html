@@ -6,21 +6,21 @@
                     <app-logo></app-logo>
                     <div *ngIf="errorMessage" class="text-danger p-1">* {{ errorMessage }}</div>
                     <form (ngSubmit)="submit()" [formGroup]="loginForm">
-                        <div class="form-group">
-                          <input type="email" class="form-control form-control-lg" formControlName="email" id="email" name="email" placeholder="Correo electrónico">
-                          <div *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched" class="small text-danger px-2 py-1">
-                            Ingresa un correo electrónico válido.
-                          </div>
+                      <div class="form-group">
+                        <input type="email" class="form-control form-control-lg" formControlName="email" id="email" name="email" placeholder="Correo electrónico">
+                        <div *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched" class="small text-danger px-2 py-1">
+                          Ingresa un correo electrónico válido.
                         </div>
-                
-                        <div class="form-group mt-2">
-                          <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Contraseña" formControlName="password" required>
-                        </div>
-                
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary mt-4 btn-lg rounded-5 px-5 w-100" [disabled]="loginForm.invalid">Iniciar sesión</button>
-                        </div>
-                      </form>
+                      </div>
+              
+                      <div class="form-group mt-2">
+                        <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Contraseña" formControlName="password" required>
+                      </div>
+              
+                      <div class="text-center">
+                          <button type="submit" class="btn btn-primary mt-4 btn-lg rounded-5 px-5 w-100" [disabled]="loginForm.invalid">Iniciar sesión</button>
+                      </div>
+                    </form>
                 </div>
             </div>
         </div>
